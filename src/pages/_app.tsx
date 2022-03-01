@@ -1,18 +1,26 @@
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
+import { useState } from 'react';
 import Script from 'next/script';
-import Head from 'next/head';
+
+import type { AppProps } from 'next/app';
+
+//service
+import { Hydrate } from 'react-query/hydration';
+import { queryConfig } from 'src/services/config';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+//style
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient(queryConfig));
+
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css"
-        />
-      </Head>
-      <Component {...pageProps} />;
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+        </Hydrate>
+      </QueryClientProvider>
       <Script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></Script>
       <Script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></Script>
     </>
