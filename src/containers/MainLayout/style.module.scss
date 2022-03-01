@@ -1,0 +1,22 @@
+@import 'src/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+
+  @include laptop {
+    padding: 24px;
+  }
+
+  @include tablet {
+    padding: 16px;
+  }
+  @include mobile {
+    padding: 12px;
+  }
+
+  main {
+    margin-top: 32px;
+  }
+}
