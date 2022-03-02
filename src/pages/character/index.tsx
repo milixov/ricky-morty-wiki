@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 //components
 import MainLayout from 'src/containers/MainLayout';
@@ -45,6 +45,11 @@ const CharacterPage: NextPage = () => {
     }
   }, [data]);
 
+  const episodeList = useMemo(
+    () => (Array.isArray(episodeData) ? episodeData : [episodeData]),
+    [episodeData]
+  );
+
   return (
     <MainLayout title="Detail information">
       <div className={styles.container}>
@@ -74,19 +79,9 @@ const CharacterPage: NextPage = () => {
               <EpisodeCard skeleton={isEpisodeFetching} />
               <EpisodeCard skeleton={isEpisodeFetching} />
               <ul uk-accordion="multiple: true">
-                {Array.isArray(episodeData)
-                  ? episodeData?.map((episode) => (
-                      <EpisodeCard
-                        key={`episode_${episode?.id}`}
-                        data={episode}
-                      />
-                    ))
-                  : [episodeData].map((episode) => (
-                      <EpisodeCard
-                        key={`episode_${episode?.id}`}
-                        data={episode}
-                      />
-                    ))}
+                {episodeList?.map((episode) => (
+                  <EpisodeCard key={`episode_${episode?.id}`} data={episode} />
+                ))}
               </ul>
             </div>
           </div>

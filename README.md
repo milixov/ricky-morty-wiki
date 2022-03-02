@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ricky Morty Wiki
 
-## Getting Started
+Is a project that brings you rick and morty characters information includes location, episodes.
 
-First, run the development server:
+See demo here [https://ricky-morty-wiki.vercel.app/](https://ricky-morty-wiki.vercel.app/).
+
+All web services provided by [http://rickandmortyapi.com/](http://rickandmortyapi.com/)
+
+## Getting started in Developer mode
+
+First, install the dependencies:
+
+```bash
+npm run install
+# or
+yarn install
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev
@@ -10,25 +24,36 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Launch the Project locally
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+For building the project and start it on your local machine use:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run build
+npm run start
+# or
+yarn build
+yarn start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Launch the Project
 
-## Learn More
+Use Dockerfile at the root of project
 
-To learn more about Next.js, take a look at the following resources:
+## Libraries and tools
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Programming Language: **JavaScript**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Typecheck: **Typescripy**
 
-## Deploy on Vercel
+Dom Manipulation: **React**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+SSR: **Next.js**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Network Layer: **React Query** [https://react-query.tanstack.com/](https://react-query.tanstack.com/)
+
+UI Library: **UI Kit** [https://getuikit.com/](https://getuikit.com/)
+
+Styling: **SCSS**
+
+Code Quality: **ESLint, Prettier, Husky**
