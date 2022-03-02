@@ -59,11 +59,11 @@ Each page wrapped in `MainLayout` container component.
 
 #### Home Page
 
-List of characters with summary information renderd with `CharacterCard` components wrapped by grid layout. The list also fetch more data by scrolling to the end (Infinite scroll list)
+List of characters with summary information renderd with [`CharacterCard`](https://github.com/milixov/ricky-morty-wiki#charactercard) components wrapped by grid layout. The list also fetch more data by scrolling to the end (Infinite scroll list)
 
 #### Character Profile
 
-The character information in detail shows `LocationCard` component for rendering location and origin of the character in the left side of the page. Episode list that chracter palyed role rendered with `EpisodeCard` compoenent with accordion behaviour. After clicking on `More Info` button in home page you can reach this route `/character?id={chracterId}`
+The character information in detail shows [`LocationCard`]() component for rendering location and origin of the character in the left side of the page. Episode list that chracter palyed role rendered with [`EpisodeCard`](https://github.com/milixov/ricky-morty-wiki#episodecard) compoenent with accordion behaviour. After clicking on `More Info` button in home page you can reach this route `/character?id={chracterId}`
 
 ## Types and Interfaces
 
@@ -96,7 +96,7 @@ Specific interfaces related to fetched data located at `src/lib/interfaces` incl
 | data     | [IEpisodes](https://github.com/milixov/ricky-morty-wiki/blob/main/src/lib/interfaces/IEpisode.ts) |         |                                 |
 | skeleton | boolean                                                                                           | false   | For showing skeleton on loading |
 
-#### CharacterCard
+#### LocationCard
 
 | Title    | Type                                                                                               | Default | Description                     |
 | -------- | -------------------------------------------------------------------------------------------------- | ------- | ------------------------------- |
