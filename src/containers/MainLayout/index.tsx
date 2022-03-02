@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
+
+//hooks
+import { useEventListener } from 'src/hooks/useEventListener';
 
 //style
 import styles from './style.module.scss';
@@ -8,12 +11,31 @@ import styles from './style.module.scss';
 interface Props {
   title: string;
   children: ReactNode;
+  onScrollEnds?: any;
 }
 
 const MainLayout = (props: Props) => {
-  const { title, children } = props;
+  const { title, children, onScrollEnds } = props;
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    let scrollTop = scrollRef?.current?.scrollTop;
+    let scrollHeight = scrollRef?.current?.scrollHeight;
+    let offsetHeight = scrollRef?.current?.offsetHeight;
+
+    if (scrollTop && scrollHeight && offsetHeight) {
+      if (offsetHeight + scrollTop >= scrollHeight) {
+        if (onScrollEnds) {
+          onScrollEnds();
+        }
+      }
+    }
+  };
+
+  useEventListener(scrollRef, 'scroll', handleScroll);
+
   return (
-    <div className={styles.container}>
+    <div ref={scrollRef} className={styles.container}>
       <Head>
         <title>Ricky Morty Wiki</title>
         <meta name="description" content="Test project for Housing Anywhere" />

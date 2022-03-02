@@ -1,15 +1,15 @@
 import http from 'src/utils/http';
-import { useQuery } from 'react-query';
+import { useQuery, useInfiniteQuery } from 'react-query';
 import { ICharacter, IEpisode, ILocation } from 'src/lib/interfaces';
 import { QueryResult, QueryResultList, QueryResultPaginated } from 'global';
 
-const useQueryCharactersPaginated: QueryResultPaginated<ICharacter> = (
-  page: number
-) =>
-  useQuery(
-    ['charactersPage', page],
-    () => http.get(`/character/?page=${page}`),
+const useQueryCharactersPaginated: QueryResultPaginated<ICharacter> = () =>
+  useInfiniteQuery(
+    'characters',
+    ({ pageParam = 1 }) => http.get(`/character/?page=${pageParam}`),
     {
+      getNextPageParam: (lastPage: any) =>
+        lastPage?.info?.next?.split('page=')[1],
       keepPreviousData: true,
     }
   );

@@ -1,3 +1,4 @@
+import React, { useState, useMemo } from 'react';
 import type { NextPage } from 'next';
 
 //components
@@ -11,14 +12,29 @@ import { useQueryCharactersPaginated } from 'src/services';
 import styles from 'src/styles/Home.module.scss';
 
 const Home: NextPage = () => {
-  const { data, isFetching } = useQueryCharactersPaginated(1);
+  const { data, isFetching, fetchNextPage, hasNextPage } =
+    useQueryCharactersPaginated();
+
+  const handleScrollEnds = () => {
+    // if (hasNextPage) {
+    fetchNextPage();
+    // }
+  };
 
   return (
-    <MainLayout title="List of Characters">
+    <MainLayout title="List of Characters" onScrollEnds={handleScrollEnds}>
       <div className={styles.container}>
-        {data?.results?.map((character) => (
-          <CharacterCard key={`character_${character?.id}`} data={character} />
+        {data?.pages?.map((page, pageIndex) => (
+          <React.Fragment key={`page_${pageIndex}`}>
+            {page?.results?.map((character) => (
+              <CharacterCard
+                key={`character_${character?.id}`}
+                data={character}
+              />
+            ))}
+          </React.Fragment>
         ))}
+
         <CharacterCard skeleton={isFetching} />
         <CharacterCard skeleton={isFetching} />
         <CharacterCard skeleton={isFetching} />

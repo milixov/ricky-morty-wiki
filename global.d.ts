@@ -2,6 +2,7 @@ import { AxiosResponse } from 'axios';
 import {
   UseQueryResult,
   QueryObserverResult,
+  UseInfiniteQueryResult,
   QueryObserverSuccessResult,
 } from 'react-query';
 
@@ -19,7 +20,7 @@ interface ResponseType<T = any> {
 
 type QueryResultPaginated<T> = (
   ...args: any
-) => UseQueryResult<ResponseType<T>, unknown>;
+) => UseInfiniteQueryResult<ResponseType<T>, unknown>;
 
 type QueryResult<T> = (...args: any) => UseQueryResult<T, unknown>;
 
