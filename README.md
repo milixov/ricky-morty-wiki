@@ -30,9 +30,9 @@ The character information in detail shows `LocationCard` component for rendering
 
 Specific interfaces related to fetched data located at `src/lib/interfaces` includes:
 
-- [src/lib/interfaces/ICharacter.ts](ICharacter)
-- [src/lib/interfaces/IEpisode.ts](IEpisodes)
-- [src/lib/interfaces/ILocation.ts](ILocation)
+- [ICharacter](https://github.com/milixov/ricky-morty-wiki/blob/main/src/lib/interfaces/ICharacter.ts)
+- [IEpisodes](https://github.com/milixov/ricky-morty-wiki/blob/main/src/lib/interfaces/IEpisode.ts)
+- [ILocation](https://github.com/milixov/ricky-morty-wiki/blob/main/src/lib/interfaces/ILocation.ts)
 
 ## Components
 
