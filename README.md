@@ -4,11 +4,11 @@ Is a project that brings you rick and morty characters information includes loca
 
 See demo here [https://ricky-morty-wiki.vercel.app/](https://ricky-morty-wiki.vercel.app/).
 
-## Reference
+## 🔗 Reference
 
 All web services provided by [http://rickandmortyapi.com/](http://rickandmortyapi.com/) and the base url configured in `.env` file at root directory
 
-## Getting started in Developer mode
+## 💻 Getting started in Developer mode
 
 First, install the dependencies:
 
@@ -26,7 +26,7 @@ npm run dev
 yarn dev
 ```
 
-## Launch the Project locally
+## 🌐 Launch the Project locally
 
 For building the project and start it on your local machine use:
 
@@ -38,30 +38,30 @@ yarn build
 yarn start
 ```
 
-## Launch the Project
+## 🚀 Launch the Project
 
 Use `Dockerfile` at the root directory
 
-## Libraries and tools
+## 🧰 Libraries and tools
 
-- Programming Language: **JavaScript**
-- Typecheck: **Typescripy**
-- Dom Manipulation: **React**
-- SSR: **Next.js**
-- Network Layer: **[React Query](https://react-query.tanstack.com/), Axios**
-- UI Library: **[UI Kit](https://getuikit.com/)**
-- Styling: **SCSS**
-- Code Quality: **ESLint, Prettier, Husky**
+- ✅ Programming Language: **JavaScript**
+- ✅ Typecheck: **Typescripy**
+- ✅ Dom Manipulation: **React**
+- ✅ SSR: **Next.js**
+- ✅ Network Layer: **[React Query](https://react-query.tanstack.com/), Axios**
+- ✅ UI Library: **[UI Kit](https://getuikit.com/)**
+- ✅ Styling: **SCSS**
+- ✅ Code Quality: **ESLint, Prettier, Husky**
 
 ## Pages
 
 Each page wrapped in `MainLayout` container component.
 
-#### Home Page
+#### 🏠 Home Page
 
 List of characters with summary information renderd with [`CharacterCard`](https://github.com/milixov/ricky-morty-wiki#charactercard) components wrapped by grid layout. The list also fetch more data by scrolling to the end (Infinite scroll list)
 
-#### Character Profile
+#### 🤡 Character Profile
 
 The character information in detail shows [`LocationCard`](https://github.com/milixov/ricky-morty-wiki#locationcard) component for rendering location and origin of the character in the left side of the page. Episode list that chracter palyed role rendered with [`EpisodeCard`](https://github.com/milixov/ricky-morty-wiki#episodecard) compoenent with accordion behaviour. After clicking on `More Info` button in home page you can reach this route `/character?id={chracterId}`
 
@@ -81,7 +81,7 @@ Specific interfaces related to fetched data located at `src/lib/interfaces` incl
 
 ## Components
 
-#### CharacterCard
+#### 📝 CharacterCard
 
 | Title          | Type                                                                                                 | Default | Description                     |
 | -------------- | ---------------------------------------------------------------------------------------------------- | ------- | ------------------------------- |
@@ -89,14 +89,14 @@ Specific interfaces related to fetched data located at `src/lib/interfaces` incl
 | skeleton       | boolean                                                                                              | false   | For showing skeleton on loading |
 | showMoreButton | boolean                                                                                              | true    | For showing `More Info` button  |
 
-#### EpisodeCard
+#### 🍿 EpisodeCard
 
 | Title    | Type                                                                                              | Default | Description                     |
 | -------- | ------------------------------------------------------------------------------------------------- | ------- | ------------------------------- |
 | data     | [IEpisodes](https://github.com/milixov/ricky-morty-wiki/blob/main/src/lib/interfaces/IEpisode.ts) |         |                                 |
 | skeleton | boolean                                                                                           | false   | For showing skeleton on loading |
 
-#### LocationCard
+#### 📍 LocationCard
 
 | Title    | Type                                                                                               | Default | Description                     |
 | -------- | -------------------------------------------------------------------------------------------------- | ------- | ------------------------------- |
@@ -104,7 +104,7 @@ Specific interfaces related to fetched data located at `src/lib/interfaces` incl
 | skeleton | boolean                                                                                            | false   | For showing skeleton on loading |
 | title    | string                                                                                             |         | title of the component          |
 
-## Hooks
+## 🪝 Hooks
 
 #### General
 
