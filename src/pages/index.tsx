@@ -16,9 +16,9 @@ const Home: NextPage = () => {
     useQueryCharactersPaginated();
 
   const handleScrollEnds = () => {
-    // if (hasNextPage) {
-    fetchNextPage();
-    // }
+    if (hasNextPage) {
+      fetchNextPage();
+    }
   };
 
   return (
