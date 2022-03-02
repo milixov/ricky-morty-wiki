@@ -63,7 +63,7 @@ List of characters with summary information renderd with [`CharacterCard`](https
 
 #### Character Profile
 
-The character information in detail shows [`LocationCard`]() component for rendering location and origin of the character in the left side of the page. Episode list that chracter palyed role rendered with [`EpisodeCard`](https://github.com/milixov/ricky-morty-wiki#episodecard) compoenent with accordion behaviour. After clicking on `More Info` button in home page you can reach this route `/character?id={chracterId}`
+The character information in detail shows [`LocationCard`](https://github.com/milixov/ricky-morty-wiki#locationcard) component for rendering location and origin of the character in the left side of the page. Episode list that chracter palyed role rendered with [`EpisodeCard`](https://github.com/milixov/ricky-morty-wiki#episodecard) compoenent with accordion behaviour. After clicking on `More Info` button in home page you can reach this route `/character?id={chracterId}`
 
 ## Types and Interfaces
 
