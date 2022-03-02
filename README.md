@@ -4,7 +4,9 @@ Is a project that brings you rick and morty characters information includes loca
 
 See demo here [https://ricky-morty-wiki.vercel.app/](https://ricky-morty-wiki.vercel.app/).
 
-All web services provided by [http://rickandmortyapi.com/](http://rickandmortyapi.com/)
+## Reference
+
+All web services provided by [http://rickandmortyapi.com/](http://rickandmortyapi.com/) and the base url configured in `.env` file at root directory
 
 ## Getting started in Developer mode
 
@@ -38,7 +40,7 @@ yarn start
 
 ## Launch the Project
 
-Use Dockerfile at the root of project
+Use `Dockerfile` at the root directory
 
 ## Libraries and tools
 
