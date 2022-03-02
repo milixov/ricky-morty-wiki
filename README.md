@@ -8,6 +8,44 @@ See demo here [https://ricky-morty-wiki.vercel.app/](https://ricky-morty-wiki.ve
 
 All web services provided by [http://rickandmortyapi.com/](http://rickandmortyapi.com/) and the base url configured in `.env` file at root directory
 
+## Pages
+
+Each page wrapped in `MainLayout` container component.
+
+#### Home Page
+
+List of characters with summary information renderd with `CharacterCard` components wrapped by grid layout. The list also fetch more data by scrolling to the end (Infinite scroll list)
+
+#### Character Profile
+
+The character information in detail shows `LocationCard` component for rendering location and origin of the character in the left side of the page. Episode list that chracter palyed role rendered with `EpisodeCard` compoenent with accordion behaviour. After clicking on `More Info` button in home page you can reach this route `/character?id={chracterId}`
+
+## Types and Interfaces
+
+#### Global
+
+- Global Types are located in `global.d.ts` at the root directory
+
+#### Specific
+
+Specific interfaces related to fetched data located at `src/lib/interfaces` includes:
+
+- [src/lib/interfaces/ICharacter.ts](ICharacter)
+- [src/lib/interfaces/IEpisode.ts](IEpisodes)
+- [src/lib/interfaces/ILocation.ts](ILocation)
+
+## Components
+
+## Hooks
+
+#### General
+
+- Event listener hook for imlementing event and managing the mount/unmount outside the components. This helps for detecting when the scroll ends. Located in `src/hooks` directory
+
+#### Web Services
+
+- React-query queries for fetch API. Located in `src/services/index.ts` directory
+
 ## Getting started in Developer mode
 
 First, install the dependencies:
@@ -44,18 +82,11 @@ Use `Dockerfile` at the root directory
 
 ## Libraries and tools
 
-Programming Language: **JavaScript**
-
-Typecheck: **Typescripy**
-
-Dom Manipulation: **React**
-
-SSR: **Next.js**
-
-Network Layer: **React Query** [https://react-query.tanstack.com/](https://react-query.tanstack.com/)
-
-UI Library: **UI Kit** [https://getuikit.com/](https://getuikit.com/)
-
-Styling: **SCSS**
-
-Code Quality: **ESLint, Prettier, Husky**
+- Programming Language: **JavaScript**
+- Typecheck: **Typescripy**
+- Dom Manipulation: **React**
+- SSR: **Next.js**
+- Network Layer: **React Query, Axios** [https://react-query.tanstack.com/](https://react-query.tanstack.com/)
+- UI Library: **UI Kit** [https://getuikit.com/](https://getuikit.com/)
+- Styling: **SCSS**
+- Code Quality: **ESLint, Prettier, Husky**
